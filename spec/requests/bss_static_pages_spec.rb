@@ -10,12 +10,6 @@ describe "BssStaticPages" do
     it "should have welcome content" do
       page.should have_content('Welcome to Ruby Gardens Home')
     end
-
-    it "should have link to about page" do
-      visit '/static_pages/home'
-      click_link 'About'
-      current_path.should == '/static_pages/about'
-    end
   end
 
   describe "About page" do
@@ -27,11 +21,18 @@ describe "BssStaticPages" do
     it "should have welcome content" do
       page.should have_content('Welcome to Ruby Gardens About')
     end
+  end
 
-    it "should have link to home page" do
-      visit '/static_pages/about'
-      click_link 'Home'
-      current_path.should == '/static_pages/home'
+  describe "Who we are page" do
+  	before(:each) {visit '/static_pages/who_we_are'}
+    it "should have correct title" do
+      page.should have_selector('title', text: 'Ruby Gardens :: Who we are Page')
     end
+ 
+    it "should have welcome content" do
+      page.should have_content('Welcome to Ruby Gardens Who we are')
+    end
+
+ 
   end
 end

@@ -9,8 +9,9 @@
 <body>
 
 <ul>		
-	<li><%= link_to "Home", static_pages_home_path  %></li>
-	<li><%= link_to "About", static_pages_about_path %></li>
+	<% get_link_for_pages.each do |el|%>
+		<li><%= el  %></li>
+	<% end %>
 </ul>
 
 <%= yield %>

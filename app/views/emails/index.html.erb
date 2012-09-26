@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Gravatar</th>
     <th>Name</th>
     <th>Surname</th>
     <th>Email</th>
@@ -10,14 +11,15 @@
     <th></th>
   </tr>
 
-<% @emails.each do |email| %>
+<% @emails.each do |user| %>
   <tr>
-    <td><%= email.name %></td>
-    <td><%= email.surname %></td>
-    <td><%= email.email %></td>
-    <td><%= link_to 'Show', email %></td>
-    <td><%= link_to 'Edit', edit_email_path(email) %></td>
-    <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= image_tag gravatar([user.email]) %></td>
+    <td><%= user.name %></td>
+    <td><%= user.surname %></td>
+    <td><%= user.email %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_email_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

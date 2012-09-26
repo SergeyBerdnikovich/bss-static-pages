@@ -4,6 +4,7 @@ module StaticPagesHelper
 		links[0] = link_to( "Home", static_pages_home_path)
 		links[1] = link_to( "About", static_pages_about_path)
 		links[2] = link_to( "Who we are", static_pages_who_we_are_path)
+		links[3] = link_to( "Emails", emails_path)
 		return links
 	end
 	def gravatar(email)

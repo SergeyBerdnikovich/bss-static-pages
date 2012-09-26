@@ -1,8 +1,7 @@
 <% content_for(:title) { 'Who we are' } %>
-Welcome to Ruby Gardens Who we are
+<h1>Welcome to Ruby Gardens Who we are</h1><br>
 
-<ul>
-  <% gravatar(@email_for_gravatar).each do |el| %>
-    <li><%= image_tag el %></li>
-  <% end %>
-</ul>
+<% gravatar(@email_for_gravatar).each do |el| %>
+    <%= image_tag el %>
+<% end %>
+
